@@ -1,0 +1,21 @@
+<!-- Include Leaflet CSS and JS files -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Create a map container with an id attribute -->
+<div id="map" style="height: 400px;"></div>
+
+<!-- In a separate JS file or within a <script> tag -->
+<script>
+  // Create a new Leaflet map centered on a specific location
+  var map = L.map('map').setView([-1.1, 37], 13);
+
+  // Add a tile layer to the map using a URL template
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Create a marker with a customized popup
+  var marker = L.marker([-1.1, 37]).addTo(map);
+  marker.bindPopup("<b>heey!</b><br /> this is juja.").openPopup();
+</script>
